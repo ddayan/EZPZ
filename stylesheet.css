@@ -1,0 +1,9 @@
+html, body, #outer, #browserContentArea {
+    height: 100%;
+}
+
+#contentFrame {
+    height: 100%;
+    width: 100%;
+}
+

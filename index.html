@@ -2,12 +2,23 @@
 <html>
     <head>
     <link href="stylesheet.css" rel="stylesheet" type="text/css" />
-    <script src="script.js" type="text/javascript"></script>
+    <script src="jquery-min.js" type="application/javascript"></script>
+    <script src="script.js" type="application/javascript"></script>
         <title>EZPZ</title>
     </head>
     <body>
-        <div id="browserContentArea">
-            <iframe id="contentFrame" privilege="content"></iframe>
+        <div id="outer">
+            <div id="browserHeader">
+                <!-- Above content area -->
+                <input id="locationBar" type="text" /><button id="go" onclick="navigate();">Go!</button>
+            </div>
+            <div id="browserContentArea">
+                <!-- Web content goes inside this iframe -->
+                <iframe id="contentFrame" privilege="content"></iframe>
+            </div>
+            <div id="browserFooter">
+                <!-- Below content area -->
+            </div>
         </div>
     </body>
 </html>
