@@ -8,9 +8,15 @@
     </head>
     <body>
         <div id="outer">
+            <div id="startPage">
+                <!-- Start page goes here -->
+                <button id="browse">Browse</button>
+            </div>
             <div id="browserHeader">
                 <!-- Above content area -->
-                <input id="locationBar" type="text" /><button id="go" onclick="navigate();">Go!</button>
+                <form id="location">
+                    <input id="locationBar" type="text" /><input id="go" type="submit" value="Go!" /><button id="home">Home</button>
+                </form>
             </div>
             <div id="browserContentArea">
                 <!-- Web content goes inside this iframe -->
