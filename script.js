@@ -2,8 +2,13 @@ const url = require("url");
 const fullscreen = require("fullscreen");
 //const winUtils = require("window-utils");
 
+var backArray=[];
+var forwardArray=[];
+var currentUrl=null;
+
 $(document).ready(function() {
     function navigate() {
+				if (currentUrl != null)	addToHistory(currentUrl)
         // invoked when the user hits the go button or hits enter in url box
         var input = $.trim($("#locationBar").val());
         // let's try to turn user input into a well formed url using the
@@ -12,6 +17,7 @@ $(document).ready(function() {
 
         // now trigger navigation
         $("#contentFrame").attr("src", input);
+				currentUrl=input;
     }
 
     fullscreen.enable();
@@ -69,7 +75,39 @@ $(document).ready(function() {
 	
 });
 
+function addToHistory(url){
+		console.log("**********ADD TO History")
+	backArray.push(url);
+	cleanForwardHistory();
+}
 
+function historyBack(){
+	if(backArray.length != 0){
+		console.log("**********hello HistoryBack")
+		var url = backArray.pop();
+		console.log(url);
+		forwardArray.push(url);
+		$("#contentFrame").attr("src", url);
+	//	return url;
+	}
+}
+
+function historyForward(){
+	if(forwardArray.length != 0){
+		console.log("**********hello HistoryForward")
+		var url = forwardArray.pop();
+		console.log(url);
+		console.log("********************");
+		console.log(forwardArray);
+		backArray.push(url);
+		$("#contentFrame").attr("src", url);
+	}
+}
+
+function cleanForwardHistory(){
+		console.log("**********clean up forward")
+	forwardArray = [];
+}
 
 function getThumb() {
     var webpage = $('#contentFrame').get(0);
