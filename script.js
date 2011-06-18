@@ -35,6 +35,8 @@ $(document).ready(function() {
         $("#browserContentArea").hide();
         $("#browserFooter").hide();
     });
+    
+    $("#contentFrame").load(recordVisit);
 
 });
 

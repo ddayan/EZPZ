@@ -16,3 +16,8 @@ html, body, #outer, #browserContentArea {
     display: none;
 }
 
+#thumbnail {
+    width: 200px;
+    height: 100px;
+}
+
