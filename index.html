@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
-    <script src="jquery-min.js" type="application/javascript"></script>
-    <script src="script.js" type="application/javascript"></script>
-        <title>EZPZ</title>
-    </head>
-    <body>
-        <div id="outer">
-            <div id="browserHeader">
-                <!-- Above content area -->
-                <input id="locationBar" type="text" /><button id="go" onclick="navigate();">Go!</button>
-            </div>
-            <div id="browserContentArea">
-                <!-- Web content goes inside this iframe -->
-                <iframe id="contentFrame" privilege="content"></iframe>
-            </div>
-            <div id="browserFooter">
-                <!-- Below content area -->
-            </div>
-        </div>
-    </body>
+<head>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+	<script src="jquery-min.js" type="application/javascript"></script>
+	<script src="script.js" type="application/javascript"></script>
+	<title>EZPZ</title>
+</head>
+<body>
+	<div id="outer">
+		<div id="browserHeader">
+			Search for something:
+			<!-- Above content area -->
+			<input id="locationBar" type="text" /><button id="go" onclick="navigate();">Go!</button>
+		</div>
+		<div id="frequesntSitesArea">
+			<h2> Go Back To Your Most Visited Websites: </h2>
+			<div class="thumb_view"> 
+				<img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+			</div>
+		</div>
+		<div id="faveSitesArea">
+			<h2> My Sites: </h2>
+			<div class="thumb_view"> 
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+			</div>
+		</div>
+		<div id="browserContentArea">
+			<!-- Web content goes inside this iframe -->
+			<iframe id="contentFrame" privilege="content" src="http://www.google.com"></iframe>
+		</div>
+	</div>
+</body>
+
 </html>
 
