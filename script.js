@@ -23,25 +23,21 @@ $(document).ready(function() {
     });
 
     $("#browse").click(function() {
+        $("#browser").css("height", "inherit");
         $("#startPage").hide();
-        $("#browserHeader").show();
-        $("#browserContentArea").show();
-        $("#browserFooter").show();
+        $("#browser").show();
     });
 
     $("#home").click(function() {
         $("#startPage").show();
-        $("#browserHeader").hide();
-        $("#browserContentArea").hide();
-        $("#browserFooter").hide();
+        $("#browser").hide();
     });
     
-    $("#contentFrame").load(recordVisit);
+    //$("#contentFrame").load(recordVisit);
 
 });
 
 function callIframe(url, callback) {
-    $(document.body).append('<IFRAME id="myId" ...>');
     $("#contentFrame").attr('src', url);
 
     $("#contentFrame").load(function() 
@@ -53,17 +49,17 @@ function callIframe(url, callback) {
 function canvasShot(browserRef, thumbImageRef) { 
   try { 
 	console.log("********************");
-	console.log(thumbImageRef.src);
+	//console.log(thumbImageRef.src);
 	console.log("********************");
     var camera = require("canvas-proxy");
     //thumbImageRef.width="300";
     //thumbImageRef.height="300";
     thumbImageRef.src=camera.snapshot(browserRef);
 	console.log("+++++++++++++++++++++");
-	console.log(thumbImageRef.src);
+	//console.log(thumbImageRef.src);
 	console.log("+++++++++++++++++++++");
   } catch (i) { 
-    console.log(i); 
+    //console.log(i); 
   } 
 }
 
@@ -72,6 +68,8 @@ $(document).ready(function() {
 	callIframe("http://www.google.com");
 	
 });
+
+
 
 function getThumb() {
     var webpage = $('#contentFrame').get(0);
@@ -85,4 +83,16 @@ function getThumb() {
 	//	console.log("+++++++++++++++++++++");
 	//	console.log(thumbnail.src);
 	//	console.log("+++++++++++++++++++++");
+    
+    //localstoragestuff
+    console.log("webpage.src = " + webpage.src);
+    var visits = localStorage.getItem(webpage.src);
+    console.log("visits = " + visits);
+    if(visits === null) {
+        visits = 0;
+    }
+    visits++;
+    localStorage.setItem(webpage.src, visits);
+    localStorage.setItem("thumb:" + webpage.src, thumbnail.src);
 }
+

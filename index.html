@@ -8,34 +8,42 @@
 </head>
 <body>
 	<div id="outer">
-		<div id="browserHeader">
-			<form id="location">
-          <input id="locationBar" type="text" /><input id="go" type="submit" value="Go!" /><button id="home">Home</button>
-      </form>
-		</div>
-		<div id="frequesntSitesArea">
-			<h2> Go Back To Your Most Visited Websites: </h2>
-			<div class="thumb_view"> 
-				<img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-			</div>
-		</div>
-		<div id="faveSitesArea">
-			<h2> My Sites: </h2>
-			<div class="thumb_view"> 
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-				<img src="imgs/thumbnail_placeholder.jpg" />
-			</div>
-		</div>
-		<div id="browserContentArea">
-			<!-- Web content goes inside this iframe -->
-			<iframe id="contentFrame" privilege="content" src="http://www.google.com"></iframe>
-		</div>
+        <div id="startPage">
+            <button id="browse">Browse</button>
+		    <div id="frequentSitesArea">
+			    <h2> Go Back To Your Most Visited Websites: </h2>
+			    <div class="thumb_view"> 
+				    <img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+			    </div>
+		    </div>
+		    <div id="faveSitesArea">
+			    <h2> My Sites: </h2>
+			    <div class="thumb_view"> 
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+				    <img src="imgs/thumbnail_placeholder.jpg" />
+			    </div>
+		    </div>
+        </div>
+        <div id="browser">
+		    <div id="browserHeader">
+			    <form id="location">
+                    <input id="locationBar" type="text" /><input id="go" type="submit" value="Go!" /><button id="home">Home</button>
+                </form>
+		    </div>
+		    <div id="browserContentArea">
+			    <!-- Web content goes inside this iframe -->
+			    <iframe id="contentFrame" privilege="content" src="http://www.google.com/"></iframe>
+		    </div>
+            <div id="browserFooter">
+                <!-- Browser footer -->
+            </div>
+        </div>
 	</div>
 </body>
