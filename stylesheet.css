@@ -1,9 +1,18 @@
 html, body, #outer, #browserContentArea {
     height: 100%;
+    width: 100%;
 }
 
-#contentFrame {
+#browserHeader {
+    width: 100%;
+}
+
+#contentFrame, #startPage {
     height: 100%;
     width: 100%;
+}
+
+#startPage {
+    display: none;
 }
 
