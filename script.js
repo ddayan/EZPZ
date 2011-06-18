@@ -40,3 +40,49 @@ $(document).ready(function() {
 
 });
 
+function callIframe(url, callback) {
+    $(document.body).append('<IFRAME id="myId" ...>');
+    $("#contentFrame").attr('src', url);
+
+    $("#contentFrame").load(function() 
+    {
+        callback(getThumb());
+    });
+}
+
+function canvasShot(browserRef, thumbImageRef) { 
+  try { 
+	console.log("********************");
+	console.log(thumbImageRef.src);
+	console.log("********************");
+    var camera = require("canvas-proxy");
+    //thumbImageRef.width="300";
+    //thumbImageRef.height="300";
+    thumbImageRef.src=camera.snapshot(browserRef);
+	console.log("+++++++++++++++++++++");
+	console.log(thumbImageRef.src);
+	console.log("+++++++++++++++++++++");
+  } catch (i) { 
+    console.log(i); 
+  } 
+}
+
+
+$(document).ready(function() {
+	callIframe("http://www.google.com");
+	
+});
+
+function getThumb() {
+    var webpage = $('#contentFrame').get(0);
+		var thumbnail = $('#thumb_1').get(0);
+	//	console.log("********************");
+	//	console.log(thumbnail.src);
+	//	console.log("********************");
+		canvasShot(webpage, thumbnail);
+	//	thumbnail.src = null;
+//		$('#thumb_1').src = thumbnail.src;
+	//	console.log("+++++++++++++++++++++");
+	//	console.log(thumbnail.src);
+	//	console.log("+++++++++++++++++++++");
+}

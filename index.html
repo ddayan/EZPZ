@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
-    <script src="jquery-min.js" type="application/javascript"></script>
-    <script src="script.js" type="application/javascript"></script>
-        <title>EZPZ</title>
-    </head>
-    <body>
-        <div id="outer">
-            <div id="startPage">
-                <!-- Start page goes here -->
-                <button id="browse">Browse</button>
-            </div>
-            <div id="browserHeader">
-                <!-- Above content area -->
-                <form id="location">
-                    <input id="locationBar" type="text" /><input id="go" type="submit" value="Go!" /><button id="home">Home</button>
-                </form>
-            </div>
-            <div id="browserContentArea">
-                <!-- Web content goes inside this iframe -->
-                <iframe id="contentFrame" privilege="content"></iframe>
-            </div>
-            <div id="browserFooter">
-                <!-- Below content area -->
-            </div>
-        </div>
-    </body>
-</html>
-
+<head>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+	<script src="jquery-min.js" type="application/javascript"></script>
+	<script src="script.js" type="application/javascript"></script>
+	<title>EZPZ</title>
+</head>
+<body>
+	<div id="outer">
+		<div id="browserHeader">
+			<form id="location">
+          <input id="locationBar" type="text" /><input id="go" type="submit" value="Go!" /><button id="home">Home</button>
+      </form>
+		</div>
+		<div id="frequesntSitesArea">
+			<h2> Go Back To Your Most Visited Websites: </h2>
+			<div class="thumb_view"> 
+				<img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+			</div>
+		</div>
+		<div id="faveSitesArea">
+			<h2> My Sites: </h2>
+			<div class="thumb_view"> 
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+				<img src="imgs/thumbnail_placeholder.jpg" />
+			</div>
+		</div>
+		<div id="browserContentArea">
+			<!-- Web content goes inside this iframe -->
+			<iframe id="contentFrame" privilege="content" src="http://www.google.com"></iframe>
+		</div>
+	</div>
+</body>
