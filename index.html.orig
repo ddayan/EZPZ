@@ -11,29 +11,16 @@
         <div id="startPage">
             <button id="browse">Browse</button>
 		    <div id="frequentSitesArea">
-		    <h1>Welcome to EZPZ, your trouble-free way to surf the internet</h1>
-		    <div class="roundedBox">
-                      <h2>You can use the box below to search the internet for topices that interest you:</h2>
-		      <form>
-		      <input type="text" size="60"/>
-		      </form>
-		      E.g. gardening, recipes, news, holidays
+			    <h2> Go Back To Your Most Visited Websites: </h2>
+			    <div class="thumb_view"> 
+				    <img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
+				    <img id="thumb_2" src="imgs/thumbnail_placeholder.jpg" />
+				    <img id="thumb_3" src="imgs/thumbnail_placeholder.jpg" />
+				    <img id="thumb_4" src="imgs/thumbnail_placeholder.jpg" />
+				    <img id="thumb_5" src="imgs/thumbnail_placeholder.jpg" />
+			    </div>
 		    </div>
-		    <div class="roundedBox">
-		      <img class="icon" src="imgs/visited-most.jpg"/>
-		      <h2>Go back to the pages that you've visited the most: </h2>
-		      <div class="thumb_view"> 
-			<img id="thumb_1" src="imgs/thumbnail_placeholder.jpg" />
-			<img id="thumb_2" src="imgs/thumbnail_placeholder.jpg" />
-			<img id="thumb_3" src="imgs/thumbnail_placeholder.jpg" />
-			<img id="thumb_4" src="imgs/thumbnail_placeholder.jpg" />
-			<img id="thumb_5" src="imgs/thumbnail_placeholder.jpg" />
-		      </div>
-		      </div>
- 		    </div>
-		    <div id="faveSitesArea" class="roundedBox">
-		            <img class="icon" src="imgs/favourite.jpg"/>
-			    <h2>Or choose from your list of saved favourites: </h2>		    <div id="faveSitesArea">
+		    <div id="faveSitesArea">
 			    <h2> My Sites: </h2>
 			    <div class="thumb_view"> 
 				    <img src="imgs/thumbnail_placeholder.jpg" />
@@ -43,7 +30,7 @@
 				    <img src="imgs/thumbnail_placeholder.jpg" />
 			    </div>
 		    </div>
-        </div></div>
+        </div>
         <div id="browser">
 		    <div id="browserHeader">
 			    <form id="location">

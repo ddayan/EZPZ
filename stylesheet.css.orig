@@ -30,7 +30,7 @@ img.icon {
   margin-right: 10px;
 }
 
-input, button {
+input {
   font-size: 2em;
   margin-bottom: 1em;
 }

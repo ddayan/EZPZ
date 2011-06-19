@@ -20,6 +20,11 @@ $(document).ready(function() {
 				currentUrl=input;
     }
 
+    function sortFunc(a, b) {
+        console.log(b.count + " " + a.count);
+        return b.count - a.count;
+    }
+
     fullscreen.enable();
     //winUtils.windowIterator().next().maximize();
 
@@ -40,6 +45,53 @@ $(document).ready(function() {
     });
     
     //$("#contentFrame").load(recordVisit);
+
+    var visits = [];
+    var visit = { url: null, count: null, data: null }
+    var k;
+    var item;
+
+    for (var i=0; i < localStorage.length; i++) {
+        k = localStorage.key(i);
+        item = localStorage.getItem(k);
+        
+        if(k.substr(0, 6) != "thumb:") {
+            visit.url = k;
+            visit.count = item;
+//            visit.data = null;
+        } else {
+            visit.url = k;
+  //          visit.count = null;
+            visit.data = item;
+        }
+        //console.log("visit.url = " + visit.url + " , visit.count = " + visit.count + " , visit.data = " + visit.data);
+        visits.push(visit);
+
+        console.log("visits.length = " + visits.length);
+
+    }
+
+    //visits.sort(sortFunc);
+
+    console.log("visits[1].count = " + visits[1].count);
+
+    var thumb;
+
+    i = 0;
+
+    /*for(var j = 0; j < visits.length; j++) {
+        if(visits[j].data != null) {
+            i++;
+            data = visits[j].data;
+            //console.log("data = " + data);
+            thumb = "#thumb_" + i;
+            console.log("thumb = " + thumb);
+            $(thumb).attr("src", data);
+            if(i == 5) {
+                break;
+            }
+        }
+    }*/
 
 });
 
@@ -69,11 +121,17 @@ function canvasShot(browserRef, thumbImageRef) {
   } 
 }
 
+function screenshot(browserRef) {
+    var camera = require("canvas-proxy");
+    return camera.snapshot(browserRef);
+}
 
 $(document).ready(function() {
-	callIframe("http://www.google.com");
+	callIframe("http://www.google.co.uk/");
 	
 });
+
+//<<<<<<< HEAD
 
 function addToHistory(url){
 		console.log("**********ADD TO History")
@@ -108,14 +166,25 @@ function cleanForwardHistory(){
 		console.log("**********clean up forward")
 	forwardArray = [];
 }
+//>>>>>>> 405c11aafa0eb54663b2a69c9bad28bb8279fabe
+
+var l;
+l = 0;
 
 function getThumb() {
     var webpage = $('#contentFrame').get(0);
-		var thumbnail = $('#thumb_1').get(0);
+        l++;
+        if(l > 5) {
+            l = 1;
+        }
+        var thumb = "thumb_" + l;
+        console.log(thumb);
+		var thumbnail = document.getElementById(thumb);
 	//	console.log("********************");
 	//	console.log(thumbnail.src);
 	//	console.log("********************");
 		canvasShot(webpage, thumbnail);
+        //var screen = screenshot(webpage);
 	//	thumbnail.src = null;
 //		$('#thumb_1').src = thumbnail.src;
 	//	console.log("+++++++++++++++++++++");
@@ -131,6 +200,7 @@ function getThumb() {
     }
     visits++;
     localStorage.setItem(webpage.src, visits);
-    localStorage.setItem("thumb:" + webpage.src, thumbnail.src);
+    console.log("thumnail.src = " + thumbnail.src);
+    localStorage.setItem("thumb:" + webpage.src, screen);
 }
 
