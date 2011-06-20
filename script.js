@@ -131,7 +131,6 @@ $(document).ready(function() {
 	
 });
 
-//<<<<<<< HEAD
 
 function addToHistory(url){
 		console.log("**********ADD TO History")
@@ -144,20 +143,18 @@ function historyBack(){
 		console.log("**********hello HistoryBack")
 		var url = backArray.pop();
 		console.log(url);
-		forwardArray.push(url);
+		forwardArray.push(currentUrl);
+		currentUrl=url;
 		$("#contentFrame").attr("src", url);
-	//	return url;
 	}
 }
 
 function historyForward(){
 	if(forwardArray.length != 0){
 		console.log("**********hello HistoryForward")
-		var url = forwardArray.pop();
-		console.log(url);
-		console.log("********************");
-		console.log(forwardArray);
-		backArray.push(url);
+		backArray.push(currentUrl);
+		var url = forwardArray.shift();
+		currentUrl = url;
 		$("#contentFrame").attr("src", url);
 	}
 }
@@ -166,7 +163,6 @@ function cleanForwardHistory(){
 		console.log("**********clean up forward")
 	forwardArray = [];
 }
-//>>>>>>> 405c11aafa0eb54663b2a69c9bad28bb8279fabe
 
 var l;
 l = 0;
